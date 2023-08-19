@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- daisyui -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.5.1/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+    <header></header>
+    <main>
+        <div class="gap-1 block md:hidden">
+
+           <div class="flex flex-wrap gap-1 mb-5">
+            <button id="button1" class="btn btn-primary block md:hidden">Triangle</button>
+            <button id="button2" class="btn btn-primary block md:hidden">Rectangle</button>
+            <button id="button3" class="btn btn-primary block md:hidden">Parallelogram</button>
+            <button id="button4" class="btn btn-primary  block md:hidden">Rhombus</button>
+            <button id="button5" class="btn btn-primary  block md:hidden">Pentagon</button>
+            <button id="button6" class="btn btn-primary block md:hidden">Ellipse</button>
+           </div>
+        </div>
+        <section class="flex justify-around items-center flex-row  gap-4">
+
+            <div class="grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+                <div id="element1"
+                    class="card w-[260px] pt-5  bg-base-100 shadow-xl border-2 border-black hidden md:block">
+                    <figure><img class="h-40" src="triangle.png" alt="Shoes" /></figure>
+                    <div class="p-3 flex flex-col gap-3 justify-center items-center">
+                        <h2 class="card-title">Triangle</h2>
+                        <p>Area(A) = 0.5 X b X h</p>
+                        <div class="flex flex-row gap-2">
+                            <input id="triangleBase"
+                                class="bg-[#5c15df] text-white pl-2 py-[2px]  font-semibold w-20 rounded-[5px]"
+                                type="text" placeholder="base" name="">
+                            <span>cm</span>
+                            <input id="triangleHeight"
+                                class="bg-[#5c15df] text-white pl-2 py-[2px] font-semibold w-20  rounded-[5px]"
+                                type="text" placeholder="height" name="">
+                            <span>cm</span>
+                        </div>
+                        <p>Area: <span id="triangleArea">_ _</span> cm <sup>2</sup></p>
+                        <div class="gap-3 flex flex-row">
+                            <button id="triangleCalculate" onclick="calculateTriangle()"
+                                class="btn btn-primary w-max px-7">Calculate</button>
+                            <button onclick="calculatereset(this)"
+                                class="btn btn-primary py-2 px-6 rounded-lg w-max ">Reset</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- first card end -->
+                <div id="element2"
+                    class="card w-[260px] pt-5  bg-base-100 shadow-xl border-2 border-black hidden md:block">
+                    <figure><img class="h-40 w-56" src="rectangle.png" alt="Shoes" /></figure>
+                    <div class="p-3 flex flex-col gap-3 justify-center items-center">
+                        <h2 class="card-title">Rectangle</h2>
+                        <p>Area(A) =w X l</p>
+                        <div class="flex flex-row gap-2">
+                            <input id="rectangleWidth"
+                                class="bg-[#5c15df] text-white pl-2 py-[2px]  font-semibold w-20 rounded-[5px]"
+                                type="text" placeholder="width" name="">
+                            <span>cm</span>
+                            <input id="rectangleLength"
+                                class="bg-[#5c15df] text-white pl-2 py-[2px] font-semibold w-20  rounded-[5px]"
+                                type="text" placeholder="length" name="">
+                            <span>cm</span>
+                        </div>
+                        <p>Area: <span id="rectangleArea">_ _</span> cm <sup>2</sup></p>
+                        <div class="gap-3 flex flex-row">
+                            <button onclick="calculateRectangle()" class="btn btn-primary w-max px-7">Calculate</button>
+                            <button onclick="calculatereset(this)"
+                                class="btn btn-primary py-2 px-6 rounded-lg w-max ">Reset</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- second card end -->
+                <div id="element3"
+                    class="card w-[260px] pt-9  bg-base-100 shadow-xl border-2 border-black hidden md:block">
+                    <figure><img class=" h-36 w-56" src="parallelogram.png" alt="Shoes" /></figure>
+                    <div class="p-3 flex flex-col gap-3 justify-center items-center">
+                        <h2 class="card-title">Parallelogram</h2>
+                        <p>Area(A) =b X h</p>
+                        <div class="flex flex-row gap-2">
+                            <input id="parallelogramBase"
+                                class="bg-[#5c15df] text-white pl-2 py-[2px]  font-semibold w-20 rounded-[5px]"
+                                type="text" placeholder="width" name="">
+                            <span>cm</span>
+                            <input id="parallelogramHeight"
+                                class="bg-[#5c15df] text-white pl-2 py-[2px] font-semibold w-20  rounded-[5px]"
+                                type="text" placeholder="length" name="">
+                            <span>cm</span>
+                        </div>
+                        <p>Area: <span id="parallelogramArea">_ _</span> cm <sup>2</sup></p>
+                        <div class="gap-3 flex flex-row">
+                            <button onclick="calculateparallelogram()"
+                                class="btn btn-primary w-max px-7">Calculate</button>
+                            <button onclick="calculatereset(this)"
+                                class="btn btn-primary py-2 px-6 rounded-lg w-max ">Reset</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- third card end -->
+                <div id="element4"
+                    class="card w-[260px] pt-5  bg-base-100 shadow-xl border-2 border-black hidden md:block">
+                    <figure><img class="h-40" src="rhombus.png" alt="Shoes" /></figure>
+                    <div class="p-3 flex flex-col gap-3 justify-center items-center">
+                        <h2 class="card-title">Rhombus</h2>
+                        <p>Area(A) = 0.5 X d<sub>1</sub> X d<sub>2</sub></p>
+                        <div class="flex flex-row gap-2">
+                            <input id="rhombusd1"
+                                class="bg-[#5c15df] text-white pl-2 py-[2px]  font-semibold w-20 rounded-[5px]"
+                                type="text" placeholder="base" name="">
+                            <span>cm</span>
+                            <input id="rhombusd2"
+                                class="bg-[#5c15df] text-white pl-2 py-[2px] font-semibold w-20  rounded-[5px]"
+                                type="text" placeholder="height" name="">
+                            <span>cm</span>
+                        </div>
+                        <p>Area: <span id="rhombusArea">_ _</span> cm <sup>2</sup></p>
+                        <div class="gap-3 flex flex-row">
+                            <button id="rhombusCalculate" onclick="calculaterhombus()"
+                                class="btn btn-primary w-max px-7">Calculate</button>
+                            <button onclick="calculatereset(this)"
+                                class="btn btn-primary py-2 px-6 rounded-lg w-max ">Reset</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- fourth card end -->
+                <div id="element5"
+                    class="card w-[260px] pt-5  bg-base-100 shadow-xl border-2 border-black hidden md:block">
+                    <figure><img class="h-40" src="pentagon.png" alt="Shoes" /></figure>
+                    <div class="p-3 flex flex-col gap-3 justify-center items-center">
+                        <h2 class="card-title">Pentagon</h2>
+                        <p>Area(A) = 0.5 X p X b</p>
+                        <div class="flex flex-row gap-2">
+                            <input id="pentagonp"
+                                class="bg-[#5c15df] text-white pl-2 py-[2px]  font-semibold w-20 rounded-[5px]"
+                                type="text" placeholder="p" name="">
+                            <span>cm</span>
+                            <input id="pentagonBase"
+                                class="bg-[#5c15df] text-white pl-2 py-[2px] font-semibold w-20  rounded-[5px]"
+                                type="text" placeholder="base" name="">
+                            <span>cm</span>
+                        </div>
+                        <p>Area: <span id="pentagonArea">_ _</span> cm <sup>2</sup></p>
+                        <div class="gap-3 flex flex-row">
+                            <button onclick="calculatepentagon()" class="btn btn-primary w-max px-7">Calculate</button>
+                            <button onclick="calculatereset(this)"
+                                class="btn btn-primary py-2 px-6 rounded-lg w-max ">Reset</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- fifth card end -->
+                <div id="element6"
+                    class="card w-[260px] pt-5  bg-base-100 shadow-xl border-2 border-black hidden md:block">
+                    <figure><img class="h-40 w-56" src="ellipse.png" alt="Shoes" /></figure>
+                    <div class="p-3 flex flex-col gap-3 justify-center items-center">
+                        <h2 class="card-title">Ellipse</h2>
+                        <p>Area(A) = 𝝅ab</p>
+                        <div class="flex flex-row gap-2">
+                            <input id="ellipseA"
+                                class="bg-[#5c15df] text-white pl-2 py-[2px]  font-semibold w-20 rounded-[5px]"
+                                type="text" placeholder="p" name="">
+                            <span>cm</span>
+                            <input id="ellipseB"
+                                class="bg-[#5c15df] text-white pl-2 py-[2px] font-semibold w-20  rounded-[5px]"
+                                type="text" placeholder="base" name="">
+                            <span>cm</span>
+                        </div>
+                        <p>Area: <span id="ellipseArea">_ _</span> cm <sup>2</sup></p>
+                        <div class="gap-3 flex flex-row">
+                            <button onclick="calculateellipse()" class="btn btn-primary w-max px-7">Calculate</button>
+                            <button onclick="calculatereset(this)"
+                                class="btn btn-primary py-2 px-6 rounded-lg w-max ">Reset</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- sixth card end -->
+
+
+
+            </div>
+            <div>
+                <h1 class="text-3xl font-bold text-center">Area Calculator</h1>
+                <div id="database">
+
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer></footer>
+
+    <script src="index.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const button1 = document.getElementById("button1");
+            const button2 = document.getElementById("button2");
+            const button3 = document.getElementById("button3");
+            const button4 = document.getElementById("button4");
+            const button5 = document.getElementById("button5");
+            const button6 = document.getElementById("button6");
+            const element1 = document.getElementById("element1");
+            const element2 = document.getElementById("element2");
+            const element3 = document.getElementById("element3");
+            const element4 = document.getElementById("element4");
+            const element5 = document.getElementById("element5");
+            const element6 = document.getElementById("element6");
+
+            button1.addEventListener("click", function () {
+                element1.classList.remove('hidden');
+                element2.classList.add("hidden");
+                element3.classList.add("hidden");
+                element4.classList.add("hidden");
+                element5.classList.add("hidden");
+                element6.classList.add("hidden");
+            });
+
+            button2.addEventListener("click", function () {
+                element2.classList.remove('hidden');
+                element1.classList.add("hidden");
+                element3.classList.add("hidden");
+                element4.classList.add("hidden");
+                element5.classList.add("hidden");
+                element6.classList.add("hidden");
+            });
+
+            button3.addEventListener("click", function () {
+                element1.classList.remove('hidden');
+                element2.classList.add("hidden");
+                element3.classList.add("hidden");
+                element4.classList.add("hidden");
+                element5.classList.add("hidden");
+                element6.classList.add("hidden");
+            });
+        });
+    </script>
+</body>
+
+</html>
